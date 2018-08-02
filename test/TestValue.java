@@ -23,5 +23,23 @@ public class TestValue {
         assertNotEquals(new Euro(10),new Euro(5));
     }
 
+    @Test
+    public void should_return_not_equal_when_given_OneNull_Onevalue() {
+        assertNotEquals(new Euro(10), null);
+    }
 
+    @Test
+    public void should_return_not_equal_when_given_two_different_object() {
+        assertNotEquals(new Euro(10),new Object());
+    }
+
+    @Test
+    public void should_return_equal_when_add_value_equal() {
+        assertEquals(new Euro(10), new Euro(7).add(new Euro(3)));
+    }
+
+    @Test
+    public void should_return_not_equal_when_add_value() {
+        assertNotEquals(new Euro(10), new Euro(5).add(new Euro(3)));
+    }
 }
